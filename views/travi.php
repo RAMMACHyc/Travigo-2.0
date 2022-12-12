@@ -5,9 +5,9 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
     <title>Contact us page</title>
-    <link href="../../travigo2.0/views/style2.css" rel="stylesheet" type="text/css" />
+    <link href="../../travigo2.0/views/css/style2.css" rel="stylesheet" type="text/css" />
     <!-- <link rel="stylesheet" type="text/css" href="../breif-2/style2 - Copie.css"> -->
-    <link rel="stylesheet" type="text/css" href="../../travigo2.0/views/style.css">
+    <link rel="stylesheet" type="text/css" href="../../travigo2.0/views/css/style.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" crossorigin="anonymous">
     <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
 

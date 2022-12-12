@@ -1,3 +1,7 @@
+<?php
+    $data = new TravigoController();
+    $travells = $data->getAllTravell();
+?>
 <!DOCTYPE html>
 <html>
 
@@ -5,8 +9,8 @@
     <title>Travel Website</title>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="../../travigo2.0/views/style1.css">
-    <link rel="stylesheet" type="text/css" href="../../travigo2.0/views/style.css">
+    <link rel="stylesheet" type="text/css" href="../../travigo2.0/views/css/style1.css">
+    <link rel="stylesheet" type="text/css" href="../../travigo2.0/views/css/style.css">
     <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -72,16 +76,30 @@
         </div>
 
         <div class="package-content">
+            
+
+            
+
+            
+
+       
+           
+
+           
+        <?php foreach($travells as $travell):?>
+            <!-- --------- -->
+     
+<!-- --------- -->
             <div class="box">
                 <div class="thum">
-                    <img src="../../travigo2.0/views/img/img1.png">
-                    <h3>$499</h3>
+                    <?php echo '<img src="data:image/jpeg;base64,'. base64_encode($travell["image"]) .'" width="100%" />'; ?>
+                    <h3><?php echo $travell['prix'];?></h3>
                 </div>
 
                 <div class="dest-content">
                     <div class="location">
-                        <h4>Paris</h4>
-                        <p>4h - 5h</p>
+                        <h4><?php echo $travell['name'];?></h4>
+                        <p><?php echo $travell['date'];?></p>
                     </div>
                     <div class="stars">
                         <a href="#"><i class='bx bxs-star'></i></a>
@@ -92,245 +110,12 @@
                     </div>
                 </div>
             </div>
-
-            <div class="box">
-                <div class="thum">
-                    <img src="../../travigo2.0/views/img/img2.png">
-                    <h3>$499</h3>
-                </div>
-
-                <div class="dest-content">
-                    <div class="location">
-                        <h4>Moscow</h4>
-                        <p>4h - 5h</p>
-                    </div>
-                    <div class="stars">
-                        <a href="#"><i class='bx bxs-star'></i></a>
-                        <a href="#"><i class='bx bxs-star'></i></a>
-                        <a href="#"><i class='bx bxs-star'></i></a>
-                        <a href="#"><i class='bx bxs-star'></i></a>
-                        <a href="#"><i class='bx bxs-star'></i></a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="box">
-                <div class="thum">
-                    <img src="../../travigo2.0/views/img/img3.png">
-                    <h3>$499</h3>
-                </div>
-
-                <div class="dest-content">
-                    <div class="location">
-                        <h4>Dubai</h4>
-                        <p>4h - 5h</p>
-                    </div>
-                    <div class="stars">
-                        <a href="#"><i class='bx bxs-star'></i></a>
-                        <a href="#"><i class='bx bxs-star'></i></a>
-                        <a href="#"><i class='bx bxs-star'></i></a>
-                        <a href="#"><i class='bx bxs-star'></i></a>
-                        <a href="#"><i class='bx bxs-star'></i></a>
-                    </div>
-                </div>
-            </div>
-
+            <?php endforeach;?>
         </div>
 
-        <div class="package-content">
-            <div class="box">
-                <div class="thum">
-                    <img src="../../travigo2.0/views/img/South Morocco Discovery - Morocco _ Travel Blog _ A Little Off Track.jpg">
-                    <h3>$499</h3>
-                </div>
-
-                <div class="dest-content">
-                    <div class="location">
-                        <h4>Fes</h4>
-                        <p>4h - 5h</p>
-                    </div>
-                    <div class="stars">
-                        <a href="#"><i class='bx bxs-star'></i></a>
-                        <a href="#"><i class='bx bxs-star'></i></a>
-                        <a href="#"><i class='bx bxs-star'></i></a>
-                        <a href="#"><i class='bx bxs-star'></i></a>
-                        <a href="#"><i class='bx bxs-star'></i></a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="box">
-                <div class="thum">
-                    <img src="../../travigo2.0/views/img/casablanca.jpg">
-                    <h3>$499</h3>
-                </div>
-
-                <div class="dest-content">
-                    <div class="location">
-                        <h4>Casablanca</h4>
-                        <p>4h - 5h</p>
-                    </div>
-                    <div class="stars">
-                        <a href="#"><i class='bx bxs-star'></i></a>
-                        <a href="#"><i class='bx bxs-star'></i></a>
-                        <a href="#"><i class='bx bxs-star'></i></a>
-                        <a href="#"><i class='bx bxs-star'></i></a>
-                        <a href="#"><i class='bx bxs-star'></i></a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="box">
-                <div class="thum">
-                    <img src="../../travigo2.0/views/img/Essaouira Morocco.jpg">
-                    <h3>$399</h3>
-                </div>
-
-                <div class="dest-content">
-                    <div class="location">
-                        <h4>Essaouira</h4>
-                        <p>4h - 5h</p>
-                    </div>
-                    <div class="stars">
-                        <a href="#"><i class='bx bxs-star'></i></a>
-                        <a href="#"><i class='bx bxs-star'></i></a>
-                        <a href="#"><i class='bx bxs-star'></i></a>
-                        <a href="#"><i class='bx bxs-star'></i></a>
-                        <a href="#"><i class='bx bxs-star'></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="package-content">
-            <div class="box">
-                <div class="thum">
-                    <img src="../../travigo2.0/views/img/MARKECH.jpg">
-                    <h3>$799</h3>
-                </div>
-
-                <div class="dest-content">
-                    <div class="location">
-                        <h4>Marrakesh</h4>
-                        <p>4h - 5h</p>
-                    </div>
-                    <div class="stars">
-                        <a href="#"><i class='bx bxs-star'></i></a>
-                        <a href="#"><i class='bx bxs-star'></i></a>
-                        <a href="#"><i class='bx bxs-star'></i></a>
-                        <a href="#"><i class='bx bxs-star'></i></a>
-                        <a href="#"><i class='bx bxs-star'></i></a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="box">
-                <div class="thum">
-                    <img src="../../travigo2.0/views/img/CHAFCHAWN.png">
-                    <h3>$399</h3>
-                </div>
-
-                <div class="dest-content">
-                    <div class="location">
-                        <h4>Chafchawn</h4>
-                        <p>4h - 5h</p>
-                    </div>
-                    <div class="stars">
-                        <a href="#"><i class='bx bxs-star'></i></a>
-                        <a href="#"><i class='bx bxs-star'></i></a>
-                        <a href="#"><i class='bx bxs-star'></i></a>
-                        <a href="#"><i class='bx bxs-star'></i></a>
-                        <a href="#"><i class='bx bxs-star'></i></a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="box">
-                <div class="thum">
-                    <img src="../../travigo2.0/views/img/WARZAZAT.jpg">
-                    <h3>$899</h3>
-                </div>
-
-                <div class="dest-content">
-                    <div class="location">
-                        <h4>Ouarzazate</h4>
-                        <p>4h - 5h</p>
-                    </div>
-                    <div class="stars">
-                        <a href="#"><i class='bx bxs-star'></i></a>
-                        <a href="#"><i class='bx bxs-star'></i></a>
-                        <a href="#"><i class='bx bxs-star'></i></a>
-                        <a href="#"><i class='bx bxs-star'></i></a>
-                        <a href="#"><i class='bx bxs-star'></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="package-content">
-            <div class="box">
-                <div class="thum">
-                    <img src="../../travigo2.0/views/img/img2.jpg">
-                    <h3>$499</h3>
-                </div>
-
-                <div class="dest-content">
-                    <div class="location">
-                        <h4>New York</h4>
-                        <p>4h - 5h</p>
-                    </div>
-                    <div class="stars">
-                        <a href="#"><i class='bx bxs-star'></i></a>
-                        <a href="#"><i class='bx bxs-star'></i></a>
-                        <a href="#"><i class='bx bxs-star'></i></a>
-                        <a href="#"><i class='bx bxs-star'></i></a>
-                        <a href="#"><i class='bx bxs-star'></i></a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="box">
-                <div class="thum">
-                    <img src="../../travigo2.0/views/img/img3.jpg">
-                    <h3>$599</h3>
-                </div>
-
-                <div class="dest-content">
-                    <div class="location">
-                        <h4>Thailand</h4>
-                        <p>4h - 5h</p>
-                    </div>
-                    <div class="stars">
-                        <a href="#"><i class='bx bxs-star'></i></a>
-                        <a href="#"><i class='bx bxs-star'></i></a>
-                        <a href="#"><i class='bx bxs-star'></i></a>
-                        <a href="#"><i class='bx bxs-star'></i></a>
-                        <a href="#"><i class='bx bxs-star'></i></a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="box">
-                <div class="thum">
-                    <img src="../../travigo2.0/views/img/img1.jpg">
-                    <h3>$699</h3>
-                </div>
-
-                <div class="dest-content">
-                    <div class="location">
-                        <h4>Australia</h4>
-                        <p>4h - 5h</p>
-                    </div>
-                    <div class="stars">
-                        <a href="#"><i class='bx bxs-star'></i></a>
-                        <a href="#"><i class='bx bxs-star'></i></a>
-                        <a href="#"><i class='bx bxs-star'></i></a>
-                        <a href="#"><i class='bx bxs-star'></i></a>
-                        <a href="#"><i class='bx bxs-star'></i></a>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </section>
+        
+        
+            </section>
     <!--footer--->
     <section id="contact">
         <div class="footer">

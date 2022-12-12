@@ -1,86 +1,38 @@
-<?php 
+<?php
 
-class TravigoController{
+class TravigoController
+{
 
-	public function getAllTravell(){
+	public function getAllTravell()
+	{
 		$travigos = Travigo::getAll();
 		return $travigos;
 	}
 
-// 	public function getOneEmploye(){
-// 		if(isset($_POST['id'])){
-// 			$data = array(
-// 				'id' => $_POST['id']
-// 			);
-// 			$employe = Employe::getEmploye($data);
-// 			return $employe;
-// 		}
-// 	}
-// 	public function findEmployes(){
-// 		if(isset($_POST['search'])){
-// 			$data = array('search' => $_POST['search']);
-// 		}
-// 		$employes = Employe::searchEmploye($data);
-// 		return $employes;
-// 	} 
+	public function addTravell() {
+		if (isset($_POST['submit'])) {
+		  // Check if any of the form fields are empty
+		  if (empty($_POST['name']) || empty($_POST['prix']) || empty($_FILES['image']) || empty($_POST['date'])) {
+			// Display error message
+			echo "All form fields are required. Please fill out the form and try again.";
+		  } else {
+			$data = array(
+			  'name' => $_POST['name'],
+			  'prix' => $_POST['prix'],
+			  'date' => $_POST['date'],
+			  'image' => file_get_contents($_FILES['image']['tmp_name']),
+			);
+			
 
-// 	public function addEmploye(){
-// 		if(isset($_POST['submit'])){
-// 			$data = array(
-// 				'nom' => $_POST['nom'],
-// 				'prenom' => $_POST['prenom'],
-// 				'matricule' => $_POST['mat'],
-// 				'depart' => $_POST['depart'],
-// 				'poste' => $_POST['poste'],
-// 				'date_emb' => $_POST['date_emb'],
-// 				'statut' => $_POST['statut'],
-// 			);
-// 			$result = Employe::add($data);
-// 			if($result === 'ok'){
-// 				Session::set('success','Employé Ajouté');
-// 				Redirect::to('home');
-// 			}else{
-// 				echo $result;
-// 			}
-// 		}
-// 	}
-
-// 	public function updateEmploye(){
-// 		if(isset($_POST['submit'])){
-// 			$data = array(
-// 				'id' => $_POST['id'],
-// 				'nom' => $_POST['nom'],
-// 				'prenom' => $_POST['prenom'],
-// 				'matricule' => $_POST['mat'],
-// 				'depart' => $_POST['depart'],
-// 				'poste' => $_POST['poste'],
-// 				'date_emb' => $_POST['date_emb'],
-// 				'statut' => $_POST['statut'],
-// 			);
-// 			$result = Employe::update($data);
-// 			if($result === 'ok'){
-// 				Session::set('success','Employé Modifié');
-// 				Redirect::to('home');
-// 			}else{
-// 				echo $result;
-// 			}
-// 		}
-// 	}
-// 	public function deleteEmploye(){
-// 		if(isset($_POST['id'])){
-// 			$data['id'] = $_POST['id'];
-// 			$result = Employe::delete($data);
-// 			if($result === 'ok'){
-// 				Session::set('success','Employé Supprimé');
-// 				Redirect::to('home');
-// 			}else{
-// 				echo $result;
-// 			}
-// 		}
-// 	}
+			$result = Travigo::add($data);
+			if($result === 'ok'){
+			  // Form was submitted successfully
+			}else{
+			  echo $result;
+			}
+		  }
+		}
+	  }
 
 }
-
-
-
-// ?>
+?>

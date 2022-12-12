@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Travigo - Travel for everyone</title>
-    <link rel="stylesheet" type="text/css" href="../../travigo2.0/views/style.css">
+    <link rel="stylesheet" type="text/css" href="../../travigo2.0/views/css/style.css">
 
     <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
 

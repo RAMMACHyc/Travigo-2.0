@@ -1,5 +1,5 @@
 <?php 
 
-define('BASE_URL','http://localhost/gestion-employes-chaine/');
+define('BASE_URL','http://localhost/travigo2.0/');
 
 ?>

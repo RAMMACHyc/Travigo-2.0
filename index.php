@@ -7,7 +7,7 @@ require_once './views/includes/header.php';
 
 
 $home = new HomeController();
-$pages = ['index','about','touls','travi','home'];
+$pages = ['index','about','touls','travi','home','add'];
 // $home->index('delete');
 if (isset($_GET['page'])) {
     if (in_array($_GET['page'],$pages)) {
