@@ -90,7 +90,8 @@
 						</div>
 
 						<div class="form-group">
-							<button type="submit" class="btn btn-primary" name="submit">Valider</button>
+							<button type="submit" class="btn btn-primary" name="submit">Ajouter</button>
+                            
 						</div>
 					</form>
 				</div>

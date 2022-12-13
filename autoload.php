@@ -3,7 +3,7 @@
 session_start();
 
 require_once './bootstrap.php';
-require_once './controllers/EmployesController.php';
+require_once './controllers/TravigoController.php';
 require_once './controllers/HomeController.php';
 
 

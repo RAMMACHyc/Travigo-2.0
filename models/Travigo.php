@@ -16,14 +16,13 @@ class Travigo {
             $query = "SELECT * FROM travell WHERE id=:id";
             $statement = DB::connect()->prepare($query);
             $statement->execute(array(":id" => $id));
-            $furniture = $statement->fetch(PDO::FETCH_OBJ);
-            return $furniture;
+            $travell = $statement->fetch(PDO::FETCH_OBJ);
+            return $travell;
         } catch (PDOException $ex) {
             echo 'erreur' . $ex->getMessage();
         }
     }
 	
-
 	static public function add($data)
     {
         $stmt = DB::connect()->prepare("INSERT INTO travell(name,prix,date,image) VALUES (:name,:prix,:date,:image)");
@@ -43,10 +42,43 @@ class Travigo {
         $stmt->close();
         $stmt = null;
     }
+	static public function getTravigo($data)
+    {
+        $id = $data['id'];
+        try {
+            $query = "SELECT * FROM travell WHERE id=:id";
+            $statement = DB::connect()->prepare($query);
+            $statement->execute(array(":id" => $id));
+            $travell = $statement->fetch(PDO::FETCH_OBJ);
+            return $travell;
+        } catch (PDOException $ex) {
+            echo 'erreur' . $ex->getMessage();
+        }
+    }
+
+	static public function update($data)
+    {
+        $stmt = DB::connect()->prepare("UPDATE travell SET name = :name,prix = :prix,image = :image,date =:date WHERE id = :id");
+
+        $stmt->bindParam(':id',$data['id']);
+        $stmt->bindParam(':name',$data['name']);
+        $stmt->bindParam(':prix',$data['prix']);
+        $stmt->bindParam(':image',$data['image']);
+		$stmt->bindParam(':date', $data['date']);
+        if ($stmt->execute()) {
+            header('Location: http://localhost/travigo2.0/touls');
+
+            return 'ok';
+        } else {
+            return 'error';
+        }
+        $stmt->close();
+        $stmt = null;
+    }
+
+
 
 	
-
-
 }
 
 ?>
