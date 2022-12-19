@@ -74,18 +74,18 @@
         <div class="title">
             <h2>Our Upcoming <br> Tour Package</h2>
         </div>
-
+        <div class="container bg-dark">
+                        <div class="row my-4">
+                                <div class="card" style="margin-bottom: 3%; text-align: center;">
+                                        <a href="<?php echo BASE_URL; ?>add">
+                                        <button style="background-color: aqua; padding: 7px 15px; cursor: pointer; border-radius: 5px; margin-top: 5%;">ajout</button>
+                                        </a>
+                                </div>
+                        </div>
+                    </div>
         <div class="package-content">
-            
-
-            
-
-            
-
-       
-           
-
-           
+        
+    
         <?php foreach($travells as $travell):?>
             <!-- --------- -->
      
@@ -95,7 +95,18 @@
                     <?php echo '<img src="data:image/jpeg;base64,'. base64_encode($travell["image"]) .'" width="100%" />'; ?>
                     <h3><?php echo $travell['prix'];?></h3>
                 </div>
-
+                <form method="post" class="mr-1" action="update">
+                    <input type="hidden" name="id" value="<?php echo $travell['id'];?>">
+                        <button style="background-color: yellow; padding: 7px 15px; cursor: pointer; border-radius: 5px; ">
+                        update
+                        </button>
+                </form>
+                <form method="post" class="mr-1" action="delete">
+                                            <input type="hidden" name="id" value="<?php echo $travell['id'];?>">
+                        <button style="background-color: red; padding: 7px 15px; cursor: pointer; border-radius: 5px; ">
+                        delete
+                        </button>
+                </form>
                 <div class="dest-content">
                     <div class="location">
                         <h4><?php echo $travell['name'];?></h4>

@@ -68,12 +68,22 @@ class TravigoController
 	
 			$result = Travigo::update($data);
 			if ($result === 'ok') {
-	
+				Redirect::to('tours');
 			} else {
 				echo $result;
 			}
 		}
 	}
-
+	public function deleteTravell(){
+		if(isset($_POST['id'])){
+			$data['id'] = $_POST['id'];
+			$result = Travigo::delete($data);
+			if($result === 'ok'){
+				Redirect::to('tours');
+			}else{
+				echo $result;
+			}
+		}
+	}
 }
 ?>
