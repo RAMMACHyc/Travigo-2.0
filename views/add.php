@@ -3,6 +3,11 @@
 		$newTravell = new TravigoController();
 		$newTravell->addTravell();
 	}
+  if(!isset($_SESSION['logged']) || $_SESSION['logged'] !== true) {
+  redirect::to('index');
+
+  }
+
 ?>
 
 <!DOCTYPE html>

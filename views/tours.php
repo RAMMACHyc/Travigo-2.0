@@ -5,33 +5,6 @@
 <!DOCTYPE html>
 <html>
 
-<head>
-    <title>Travel Website</title>
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="../../travigo2.0/views/css/style1.css">
-    <link rel="stylesheet" type="text/css" href="../../travigo2.0/views/css/style.css">
-    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Paytone+One&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <link href="https://allfont.net/allfont.css?fonts=poetsen" rel="stylesheet" type="text/css" />
-
-</head>
-<!--header--->
-<header>
-    <a href="#" class="logo"><b>Travigo</b></a>
-    <div class="bx bx-menu" id="menu-icon"></div>
-
-    <ul class="navbar">
-            <li><a href="index">Home</a></li>
-            <li><a href="touls">Tours</a></li>
-            <li><a href="about">About</a></li>
-            <li><a href="travi">Contact Us</a></li>
-    </ul>
-</header>
-
 <body>
 
     <div class="body">
@@ -74,6 +47,8 @@
         <div class="title">
             <h2>Our Upcoming <br> Tour Package</h2>
         </div>
+        <?php if (isset($_SESSION['logged']) && $_SESSION['logged'] === true) { ?>
+
         <div class="container bg-dark">
                         <div class="row my-4">
                                 <div class="card" style="margin-bottom: 3%; text-align: center;">
@@ -83,7 +58,10 @@
                                 </div>
                         </div>
                     </div>
-        <div class="package-content">
+        <?php } ?>
+
+     <div class="package-content">
+
         
     
         <?php foreach($travells as $travell):?>
@@ -95,8 +73,11 @@
                     <?php echo '<img src="data:image/jpeg;base64,'. base64_encode($travell["image"]) .'" width="100%" />'; ?>
                     <h3><?php echo $travell['prix'];?></h3>
                 </div>
+                <?php if (isset($_SESSION['logged']) && $_SESSION['logged'] === true) { ?>
+
                 <form method="post" class="mr-1" action="update">
                     <input type="hidden" name="id" value="<?php echo $travell['id'];?>">
+
                         <button style="background-color: yellow; padding: 7px 15px; cursor: pointer; border-radius: 5px; ">
                         update
                         </button>
@@ -107,6 +88,8 @@
                         delete
                         </button>
                 </form>
+                <?php } ?>
+
                 <div class="dest-content">
                     <div class="location">
                         <h4><?php echo $travell['name'];?></h4>

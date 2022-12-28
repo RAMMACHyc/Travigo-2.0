@@ -7,6 +7,10 @@
 		$existTravell = new TravigoController();
 		$existTravell-> updateTravell();
 	}
+	if(!isset($_SESSION['logged']) || $_SESSION['logged'] !== true) {
+		redirect::to('index');
+	  
+		}
 ?>
 
 <!DOCTYPE html>
